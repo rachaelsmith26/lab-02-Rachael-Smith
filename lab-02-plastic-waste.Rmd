@@ -182,21 +182,43 @@ ggplot(data = plastic_waste,
 ```
 
 1.  Convert your side-by-side box plots from the previous task to [violin plots](http://ggplot2.tidyverse.org/reference/geom_violin.html). What do the violin plots reveal that box plots do not? What features are apparent in the box plots but not in the violin plots?
-
+The violin plots show more of where the density of the data is. The boxplots do not show the density as well but they show the mean, median, and mode. 
+https://64cdaca53fc84581b292524c2685e0eb.app.posit.cloud/graphics/plot.png?width=675&height=390&randomizer=1229286694
 ```{marginfigure}
 **Remember:** We use `geom_point()` to make scatterplots.
 ```
 
 1.  Visualize the relationship between plastic waste per capita and mismanaged plastic waste per capita using a scatterplot.
     Describe the relationship.
-
+    ggplot(data = plastic_waste, 
+       mapping = aes(x = mismanaged_plastic_waste_per_cap, 
+                     y = plastic_waste_per_cap)) + 
+  geom_point()
+    The relationship between plastic waste per capita and mismanged plastic waste per capita accroding to the scatterplot shows that the ratio is about the same.
+    
+https://64cdaca53fc84581b292524c2685e0eb.app.posit.cloud/graphics/bd9acefc-6b6a-4629-abee-a85e46a4ddb3.png
 2.  Colour the points in the scatterplot by continent.
     Does there seem to be any clear distinctions between continents with respect to how plastic waste per capita and mismanaged plastic waste per capita are associated?
-
+    ggplot(data = plastic_waste, 
+       mapping = aes(x = mismanaged_plastic_waste_per_cap, 
+                     y = plastic_waste_per_cap, color=continent)) +
+  geom_point()
+    There does not seem to be a clear distinction between continents.
+https://64cdaca53fc84581b292524c2685e0eb.app.posit.cloud/graphics/fc856ea1-3e37-4b85-a026-316cadf8561f.png
 3.  Visualize the relationship between plastic waste per capita and total population as well as plastic waste per capita and coastal population.
     You will need to make two separate plots.
     Do either of these pairs of variables appear to be more strongly linearly associated?
-
+    ggplot(data = plastic_waste, 
+       mapping = aes(x = mismanaged_plastic_waste_per_cap, 
+                     y = total_pop)) +
+  geom_point()
+  https://64cdaca53fc84581b292524c2685e0eb.app.posit.cloud/graphics/c877fab8-e7ba-4a12-b8c6-12560815403d.png
+ggplot(data = plastic_waste, 
+       mapping = aes(x = mismanaged_plastic_waste_per_cap, 
+                     y = coastal_pop)) +
+  geom_point()
+  https://64cdaca53fc84581b292524c2685e0eb.app.posit.cloud/graphics/aa925d59-99c6-4032-8462-2ffd1d761e5a.png
+  The linear association between the two plots seems to be very similar. However it looks like there is more outliers in the costal population plot then in the total.
 🧶 ✅ ⬆️ *Now is another good time to knit your document and commit and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
 # Wrapping up
