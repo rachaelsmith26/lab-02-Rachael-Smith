@@ -234,7 +234,8 @@ If you haven't had time to finish the exercises above, please ask for help befor
 ```
 
 1.  Recreate the following plot, and interpret what you see in context of the data.
-
+The plot shows a linear regression.
+https://64cdaca53fc84581b292524c2685e0eb.app.posit.cloud/graphics/3802cfa9-cfc6-4bad-b205-c2adb0f5e46e.png
 ```{r echo=FALSE, message=FALSE, eval=TRUE, warning=FALSE}
 plastic_waste %>% 
   mutate(coastal_pop_prop = coastal_pop / total_pop) %>%
