@@ -1,5 +1,6 @@
 ---
 title: "Lab 02 - Global plastic waste"
+name: Rachael Smith
 output: 
   tufte::tufte_html:
     tufte_variant: "envisioned"
