@@ -75,13 +75,16 @@ The variable descriptions are as follows:
 # Warm up
 
 -   Recall that RStudio is divided into four panes. Without looking, can you name them all and briefly describe their purpose?
+The top left panel allows you to edit and see the document. The bottom left is the console were you can add packages type in code and will show you any errors that might occur when trying to knit. The top right panel holds all the data sets, history and allows you to push the information to another website. The bottom left is mostly used for viewing the document and what it looks like once it has been knited. 
 -   Verify that the dataset has loaded into the Environment. How many observations are in the dataset? Clicking on the dataset in the Environment will allow you to inspect it more carefully. Alternatively, you can type `View(plastic_waste)` into the Console to do this.
+There is 240 observation in the dataset.
 
 ```{marginfigure}
 **Hint:** If you're not sure, run the command `?NA` which will lead you to the documentation.
 ```
 
 -   Have a quick look at the data and notice that there are cells taking the value `NA` -- what does this mean?
+Cells taking the NA means that there is no data for that specific country in that cell.
 
 # Exercises
 
@@ -102,8 +105,14 @@ plastic_waste %>%
 
 Did you expect this result?
 You might consider doing some research on Trinidad and Tobago to see why plastic waste per capita is so high there, or whether this is a data error.
+This did surprise me. I was not expecting a tropical island to have so much plastic waste. However once I did my research I understood why. There is no recycling center on the islands and there is limited collection. This helped me to understand why there numbers are so high.
 
 1.  Plot, using histograms, the distribution of plastic waste per capita faceted by continent. What can you say about how the continents compare to each other in terms of their plastic waste per capita?
+Most of the continents still show high plastic wast (above 20). However South America is pretty low at just over 10.
+ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap)) +
+  geom_histogram(binwidth = 0.2)+
+  facet_wrap(~continent)
+https://64cdaca53fc84581b292524c2685e0eb.app.posit.cloud/file_show?path=%2Fcloud%2Fproject%2FRplot.png
 
 ```{marginfigure}
 **NOTE:** From this point onwards the plots and the output of the code are not displayed in the lab instructions, but you can and should the code and view the results yourself.
